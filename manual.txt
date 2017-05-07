@@ -1,0 +1,10 @@
+這個是要用這個的安裝教學
+
+Windows
+1. 安裝python 2.7
+2. 到控制台設定環境變數，分號後面加 路徑/python
+3. 開啟命令提示字元輸入python確認是否能用
+4. 安裝robot framework指令 : pip install robotframework
+5. 安裝robot framework library指令 (selenium2) : pip install robotframework-selenium2library
+
+使用教學口述
