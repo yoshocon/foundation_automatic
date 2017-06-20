@@ -1,0 +1,1221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170619 22:46:23.624" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="D:\xampp\htdocs\yoshocon\foundation\automatic\integration\add_normal_lesson.robot" id="s1" name="Add Normal Lesson">
+<kw type="setup" name="SuiteSetup">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>time.strftime("%Y%m%d%H%M%S")</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.477" level="INFO">${time} = 20170619224624</msg>
+<status status="PASS" endtime="20170619 22:46:24.477" starttime="20170619 22:46:24.475"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${reg_account}</arg>
+<arg>robot_${time}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.483" level="INFO">${reg_account} = robot_20170619224624</msg>
+<status status="PASS" endtime="20170619 22:46:24.483" starttime="20170619 22:46:24.478"></status>
+</kw>
+<kw name="Create Register Data" library="common">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(1,2)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${sex}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.486" level="INFO">${sex} = 1</msg>
+<status status="PASS" endtime="20170619 22:46:24.486" starttime="20170619 22:46:24.485"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${sex}==1</arg>
+<arg>Set Variable</arg>
+<arg>male</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>female</arg>
+</arguments>
+<assign>
+<var>${sex}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>male</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:46:24.490" starttime="20170619 22:46:24.489"></status>
+</kw>
+<msg timestamp="20170619 22:46:24.490" level="INFO">${sex} = male</msg>
+<status status="PASS" endtime="20170619 22:46:24.490" starttime="20170619 22:46:24.487"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(1970,2000)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${year}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.492" level="INFO">${year} = 1979</msg>
+<status status="PASS" endtime="20170619 22:46:24.492" starttime="20170619 22:46:24.491"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(1,12)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${month}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.494" level="INFO">${month} = 8</msg>
+<status status="PASS" endtime="20170619 22:46:24.494" starttime="20170619 22:46:24.493"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(1,28)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.497" level="INFO">${day} = 13</msg>
+<status status="PASS" endtime="20170619 22:46:24.497" starttime="20170619 22:46:24.495"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${year}/${month}/${day}</arg>
+</arguments>
+<assign>
+<var>${birthday}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.499" level="INFO">${birthday} = 1979/8/13</msg>
+<status status="PASS" endtime="20170619 22:46:24.499" starttime="20170619 22:46:24.497"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${sex}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.500" level="INFO">${sex} = male</msg>
+<status status="PASS" endtime="20170619 22:46:24.500" starttime="20170619 22:46:24.499"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${birthday}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.501" level="INFO">${birthday} = 1979/8/13</msg>
+<status status="PASS" endtime="20170619 22:46:24.502" starttime="20170619 22:46:24.501"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:46:24.502" starttime="20170619 22:46:24.484"></status>
+</kw>
+<kw name="Register User" library="automatic">
+<arguments>
+<arg>${reg_account}</arg>
+<arg>${sex}</arg>
+<arg>${birthday}</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:46:24.510" starttime="20170619 22:46:24.502"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${classroomName1}</arg>
+<arg>class_${time}_1</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.515" level="INFO">${classroomName1} = class_20170619224624_1</msg>
+<status status="PASS" endtime="20170619 22:46:24.516" starttime="20170619 22:46:24.511"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${classroomName2}</arg>
+<arg>class_${time}_2</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.522" level="INFO">${classroomName2} = class_20170619224624_2</msg>
+<status status="PASS" endtime="20170619 22:46:24.523" starttime="20170619 22:46:24.516"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${classroomName3}</arg>
+<arg>class_${time}_3</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.529" level="INFO">${classroomName3} = class_20170619224624_3</msg>
+<status status="PASS" endtime="20170619 22:46:24.530" starttime="20170619 22:46:24.523"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${classroomName4}</arg>
+<arg>class_${time}_4</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.535" level="INFO">${classroomName4} = class_20170619224624_4</msg>
+<status status="PASS" endtime="20170619 22:46:24.535" starttime="20170619 22:46:24.530"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${classroomName5}</arg>
+<arg>class_${time}_5</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.540" level="INFO">${classroomName5} = class_20170619224624_5</msg>
+<status status="PASS" endtime="20170619 22:46:24.541" starttime="20170619 22:46:24.536"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${classroomName6}</arg>
+<arg>class_${time}_6</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.546" level="INFO">${classroomName6} = class_20170619224624_6</msg>
+<status status="PASS" endtime="20170619 22:46:24.546" starttime="20170619 22:46:24.541"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(20,200)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${people1}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.548" level="INFO">${people1} = 169</msg>
+<status status="PASS" endtime="20170619 22:46:24.549" starttime="20170619 22:46:24.547"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${people1}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.551" level="INFO">${people1} = 169</msg>
+<status status="PASS" endtime="20170619 22:46:24.552" starttime="20170619 22:46:24.549"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(20,200)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${people2}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.554" level="INFO">${people2} = 102</msg>
+<status status="PASS" endtime="20170619 22:46:24.554" starttime="20170619 22:46:24.552"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${people2}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.557" level="INFO">${people2} = 102</msg>
+<status status="PASS" endtime="20170619 22:46:24.557" starttime="20170619 22:46:24.555"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(20,200)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${people3}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.559" level="INFO">${people3} = 166</msg>
+<status status="PASS" endtime="20170619 22:46:24.559" starttime="20170619 22:46:24.558"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${people3}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.560" level="INFO">${people3} = 166</msg>
+<status status="PASS" endtime="20170619 22:46:24.560" starttime="20170619 22:46:24.559"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(20,200)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${people4}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.561" level="INFO">${people4} = 122</msg>
+<status status="PASS" endtime="20170619 22:46:24.561" starttime="20170619 22:46:24.560"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${people4}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.563" level="INFO">${people4} = 122</msg>
+<status status="PASS" endtime="20170619 22:46:24.563" starttime="20170619 22:46:24.562"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(20,200)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${people5}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.565" level="INFO">${people5} = 129</msg>
+<status status="PASS" endtime="20170619 22:46:24.565" starttime="20170619 22:46:24.564"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${people5}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.567" level="INFO">${people5} = 129</msg>
+<status status="PASS" endtime="20170619 22:46:24.568" starttime="20170619 22:46:24.566"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randint(20,200)</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${people6}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.570" level="INFO">${people6} = 30</msg>
+<status status="PASS" endtime="20170619 22:46:24.570" starttime="20170619 22:46:24.568"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${people6}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.572" level="INFO">${people6} = 30</msg>
+<status status="PASS" endtime="20170619 22:46:24.573" starttime="20170619 22:46:24.571"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lessonName}</arg>
+<arg>lesson_${time}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.580" level="INFO">${lessonName} = lesson_20170619224624</msg>
+<status status="PASS" endtime="20170619 22:46:24.581" starttime="20170619 22:46:24.574"></status>
+</kw>
+<kw name="Get New Time">
+<assign>
+<var>${lessonTime}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>time.strftime("%Y/%m")</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.583" level="INFO">${time} = 2017/06</msg>
+<status status="PASS" endtime="20170619 22:46:24.583" starttime="20170619 22:46:24.582"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>time.strftime("%d")</arg>
+<arg>time</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.584" level="INFO">${day} = 19</msg>
+<status status="PASS" endtime="20170619 22:46:24.584" starttime="20170619 22:46:24.583"></status>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<doc>Converts the given item to an integer number.</doc>
+<arguments>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.586" level="INFO">${day} = 19</msg>
+<status status="PASS" endtime="20170619 22:46:24.587" starttime="20170619 22:46:24.585"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${day}+1</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.589" level="INFO">${day} = 20</msg>
+<status status="PASS" endtime="20170619 22:46:24.589" starttime="20170619 22:46:24.587"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>len("${day}")</arg>
+</arguments>
+<assign>
+<var>${dayLenght}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.590" level="INFO">${dayLenght} = 2</msg>
+<status status="PASS" endtime="20170619 22:46:24.591" starttime="20170619 22:46:24.590"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${dayLenght}==1</arg>
+<arg>0${day}</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${day}</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:46:24.593" starttime="20170619 22:46:24.592"></status>
+</kw>
+<msg timestamp="20170619 22:46:24.593" level="INFO">${day} = 20</msg>
+<status status="PASS" endtime="20170619 22:46:24.593" starttime="20170619 22:46:24.591"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${time}/${day}</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20170619 22:46:24.595" level="INFO">${time} = 2017/06/20</msg>
+<status status="PASS" endtime="20170619 22:46:24.596" starttime="20170619 22:46:24.594"></status>
+</kw>
+<msg timestamp="20170619 22:46:24.597" level="INFO">${lessonTime} = 2017/06/20</msg>
+<status status="PASS" endtime="20170619 22:46:24.597" starttime="20170619 22:46:24.581"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lessonTime}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.599" level="INFO">${lessonTime} = 2017/06/20</msg>
+<status status="PASS" endtime="20170619 22:46:24.599" starttime="20170619 22:46:24.598"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lessonContract}</arg>
+<arg>機器人</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.606" level="INFO">${lessonContract} = 機器人</msg>
+<status status="PASS" endtime="20170619 22:46:24.606" starttime="20170619 22:46:24.600"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lessonPhone}</arg>
+<arg>0988521234</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.613" level="INFO">${lessonPhone} = 0988521234</msg>
+<status status="PASS" endtime="20170619 22:46:24.614" starttime="20170619 22:46:24.607"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lessonReason}</arg>
+<arg>機器人測試申請課程</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.620" level="INFO">${lessonReason} = 機器人測試申請課程</msg>
+<status status="PASS" endtime="20170619 22:46:24.620" starttime="20170619 22:46:24.614"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${FOUNDATION_URL}</arg>
+<arg>${DEFAULT_BROWSER}</arg>
+</arguments>
+<msg timestamp="20170619 22:46:24.622" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000'</msg>
+<status status="PASS" endtime="20170619 22:47:04.681" starttime="20170619 22:46:24.621"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170619 22:47:06.040" starttime="20170619 22:47:04.682"></status>
+</kw>
+<kw name="Log In" library="login">
+<arguments>
+<arg>${ADMIN_ACCOUNT}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+</arguments>
+<kw name="Go To Login Page" library="login">
+<kw name="Click Need Element" library="common">
+<arguments>
+<arg>id=hamberger</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:47:06.156" starttime="20170619 22:47:06.045"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:06.192" level="INFO">Current page contains element 'id=hamberger'.</msg>
+<status status="PASS" endtime="20170619 22:47:06.193" starttime="20170619 22:47:06.156"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:06.195" level="INFO">Clicking element 'id=hamberger'.</msg>
+<status status="PASS" endtime="20170619 22:47:06.582" starttime="20170619 22:47:06.193"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<msg timestamp="20170619 22:47:07.084" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20170619 22:47:07.085" starttime="20170619 22:47:06.583"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:07.086" starttime="20170619 22:47:06.044"></status>
+</kw>
+<kw name="Click Need Element" library="common">
+<arguments>
+<arg>id=login</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:47:07.147" starttime="20170619 22:47:07.088"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:07.176" level="INFO">Current page contains element 'id=login'.</msg>
+<status status="PASS" endtime="20170619 22:47:07.176" starttime="20170619 22:47:07.148"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:07.177" level="INFO">Clicking element 'id=login'.</msg>
+<status status="PASS" endtime="20170619 22:47:08.149" starttime="20170619 22:47:07.177"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<msg timestamp="20170619 22:47:08.651" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20170619 22:47:08.651" starttime="20170619 22:47:08.150"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:08.652" starttime="20170619 22:47:07.086"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>還沒有帳號</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:47:08.821" starttime="20170619 22:47:08.653"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:08.821" starttime="20170619 22:47:06.043"></status>
+</kw>
+<kw name="Input User Account" library="login">
+<arguments>
+<arg>${account}</arg>
+</arguments>
+<kw name="Input Need Element" library="common">
+<arguments>
+<arg>id=account</arg>
+<arg>${account}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:47:08.878" starttime="20170619 22:47:08.824"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:08.901" level="INFO">Current page contains element 'id=account'.</msg>
+<status status="PASS" endtime="20170619 22:47:08.901" starttime="20170619 22:47:08.878"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:08.903" level="INFO">Typing text 'administrator' into text field 'id=account'</msg>
+<status status="PASS" endtime="20170619 22:47:09.391" starttime="20170619 22:47:08.902"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<msg timestamp="20170619 22:47:09.893" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20170619 22:47:09.893" starttime="20170619 22:47:09.392"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:09.893" starttime="20170619 22:47:08.823"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:09.894" starttime="20170619 22:47:08.822"></status>
+</kw>
+<kw name="Input User Password" library="login">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Need Element" library="common">
+<arguments>
+<arg>id=pwd</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:47:09.961" starttime="20170619 22:47:09.897"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:09.986" level="INFO">Current page contains element 'id=pwd'.</msg>
+<status status="PASS" endtime="20170619 22:47:09.986" starttime="20170619 22:47:09.962"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:09.988" level="INFO">Typing text 'a1234567' into text field 'id=pwd'</msg>
+<status status="PASS" endtime="20170619 22:47:10.330" starttime="20170619 22:47:09.987"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<msg timestamp="20170619 22:47:10.831" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20170619 22:47:10.831" starttime="20170619 22:47:10.330"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:10.832" starttime="20170619 22:47:09.896"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:10.832" starttime="20170619 22:47:09.894"></status>
+</kw>
+<kw name="Input Verification Code" library="login">
+<kw name="Wait All Verification Code Is Appear" library="login">
+<assign>
+<var>${currentCode}</var>
+</assign>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>id=verification</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:47:10.886" starttime="20170619 22:47:10.834"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>id=verification</arg>
+</arguments>
+<msg timestamp="20170619 22:47:10.906" level="INFO">Current page contains element 'id=verification'.</msg>
+<status status="PASS" endtime="20170619 22:47:10.906" starttime="20170619 22:47:10.886"></status>
+</kw>
+<kw name="Get Source" library="Selenium2Library">
+<doc>Returns the entire html source of the current page or frame.</doc>
+<assign>
+<var>${code}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.921" level="INFO">${code} = &lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;&lt;meta charset="utf-8" /&gt;&lt;!-- CSS--&gt;&lt;link rel="stylesheet" href="stylesheets/bootstrap.css" /&gt;&lt;link rel="stylesheet" href="stylesheets/pa...</msg>
+<status status="PASS" endtime="20170619 22:47:10.922" starttime="20170619 22:47:10.907"></status>
+</kw>
+<kw name="Get Verification Code" library="login">
+<arguments>
+<arg>${code}</arg>
+</arguments>
+<assign>
+<var>${currentCode}</var>
+</assign>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${code}</arg>
+<arg>&lt;div id="verification" style="float:left;" class="check_img"&gt;</arg>
+</arguments>
+<assign>
+<var>${code2}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.924" level="INFO">${code2} = [u'&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;&lt;meta charset="utf-8" /&gt;&lt;!-- CSS--&gt;&lt;link rel="stylesheet" href="stylesheets/bootstrap.css" /&gt;&lt;link rel="stylesheet" href="stylesheets...</msg>
+<status status="PASS" endtime="20170619 22:47:10.924" starttime="20170619 22:47:10.923"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${code2[1]}</arg>
+<arg>&lt;/div&gt;&lt;img src="images/reload.png"</arg>
+</arguments>
+<assign>
+<var>${code3}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.926" level="INFO">${code3} = [u'&lt;img src="images/num/04.png" /&gt;&lt;img src="images/num/06.png" /&gt;&lt;img src="images/num/09.png" /&gt;&lt;img src="images/num/03.png" /&gt;', u' style="margin-left:10px;cursor:pointer;" title="\u91cd\u65b0\u7522\...</msg>
+<status status="PASS" endtime="20170619 22:47:10.926" starttime="20170619 22:47:10.925"></status>
+</kw>
+<kw name="Split String" library="String">
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<arguments>
+<arg>${code3[0]}</arg>
+<arg>&gt;&lt;</arg>
+</arguments>
+<assign>
+<var>${code4}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.927" level="INFO">${code4} = [u'&lt;img src="images/num/04.png" /', u'img src="images/num/06.png" /', u'img src="images/num/09.png" /', u'img src="images/num/03.png" /&gt;']</msg>
+<status status="PASS" endtime="20170619 22:47:10.928" starttime="20170619 22:47:10.927"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${code4[0]}</arg>
+<arg>&lt;</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${code4[0]}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.929" level="INFO">${code4[0]} = img src="images/num/04.png" /</msg>
+<status status="PASS" endtime="20170619 22:47:10.929" starttime="20170619 22:47:10.928"></status>
+</kw>
+<kw name="Replace String" library="String">
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<arguments>
+<arg>${code4[3]}</arg>
+<arg>&gt;</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<assign>
+<var>${code4[3]}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.931" level="INFO">${code4[3]} = img src="images/num/03.png" /</msg>
+<status status="PASS" endtime="20170619 22:47:10.931" starttime="20170619 22:47:10.930"></status>
+</kw>
+<kw name="Split String To Characters" library="String">
+<doc>Splits the given ``string`` to characters.</doc>
+<arguments>
+<arg>${code4[0]}</arg>
+</arguments>
+<assign>
+<var>${code5}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.933" level="INFO">${code5} = [u'i', u'm', u'g', u' ', u's', u'r', u'c', u'=', u'"', u'i', u'm', u'a', u'g', u'e', u's', u'/', u'n', u'u', u'm', u'/', u'0', u'4', u'.', u'p', u'n', u'g', u'"', u' ', u'/']</msg>
+<status status="PASS" endtime="20170619 22:47:10.933" starttime="20170619 22:47:10.932"></status>
+</kw>
+<kw name="Split String To Characters" library="String">
+<doc>Splits the given ``string`` to characters.</doc>
+<arguments>
+<arg>${code4[1]}</arg>
+</arguments>
+<assign>
+<var>${code6}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.936" level="INFO">${code6} = [u'i', u'm', u'g', u' ', u's', u'r', u'c', u'=', u'"', u'i', u'm', u'a', u'g', u'e', u's', u'/', u'n', u'u', u'm', u'/', u'0', u'6', u'.', u'p', u'n', u'g', u'"', u' ', u'/']</msg>
+<status status="PASS" endtime="20170619 22:47:10.936" starttime="20170619 22:47:10.934"></status>
+</kw>
+<kw name="Split String To Characters" library="String">
+<doc>Splits the given ``string`` to characters.</doc>
+<arguments>
+<arg>${code4[2]}</arg>
+</arguments>
+<assign>
+<var>${code7}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.938" level="INFO">${code7} = [u'i', u'm', u'g', u' ', u's', u'r', u'c', u'=', u'"', u'i', u'm', u'a', u'g', u'e', u's', u'/', u'n', u'u', u'm', u'/', u'0', u'9', u'.', u'p', u'n', u'g', u'"', u' ', u'/']</msg>
+<status status="PASS" endtime="20170619 22:47:10.939" starttime="20170619 22:47:10.937"></status>
+</kw>
+<kw name="Split String To Characters" library="String">
+<doc>Splits the given ``string`` to characters.</doc>
+<arguments>
+<arg>${code4[3]}</arg>
+</arguments>
+<assign>
+<var>${code8}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.941" level="INFO">${code8} = [u'i', u'm', u'g', u' ', u's', u'r', u'c', u'=', u'"', u'i', u'm', u'a', u'g', u'e', u's', u'/', u'n', u'u', u'm', u'/', u'0', u'3', u'.', u'p', u'n', u'g', u'"', u' ', u'/']</msg>
+<status status="PASS" endtime="20170619 22:47:10.941" starttime="20170619 22:47:10.939"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${code5[21]}${code6[21]}${code7[21]}${code8[21]}</arg>
+</arguments>
+<assign>
+<var>${currectCode}</var>
+</assign>
+<msg timestamp="20170619 22:47:10.945" level="INFO">${currectCode} = 4693</msg>
+<status status="PASS" endtime="20170619 22:47:10.945" starttime="20170619 22:47:10.942"></status>
+</kw>
+<msg timestamp="20170619 22:47:10.945" level="INFO">${currentCode} = 4693</msg>
+<status status="PASS" endtime="20170619 22:47:10.945" starttime="20170619 22:47:10.922"></status>
+</kw>
+<msg timestamp="20170619 22:47:10.946" level="INFO">${currentCode} = 4693</msg>
+<status status="PASS" endtime="20170619 22:47:10.946" starttime="20170619 22:47:10.833"></status>
+</kw>
+<kw name="Input Need Element" library="common">
+<arguments>
+<arg>id=code</arg>
+<arg>${currentCode}</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" endtime="20170619 22:47:11.008" starttime="20170619 22:47:10.948"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:11.031" level="INFO">Current page contains element 'id=code'.</msg>
+<status status="PASS" endtime="20170619 22:47:11.031" starttime="20170619 22:47:11.009"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${text}</arg>
+</arguments>
+<msg timestamp="20170619 22:47:11.032" level="INFO">Typing text '4693' into text field 'id=code'</msg>
+<status status="PASS" endtime="20170619 22:47:11.291" starttime="20170619 22:47:11.032"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<msg timestamp="20170619 22:47:11.792" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20170619 22:47:11.792" starttime="20170619 22:47:11.292"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:11.792" starttime="20170619 22:47:10.947"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:11.793" starttime="20170619 22:47:10.832"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>id=login</arg>
+</arguments>
+<msg timestamp="20170619 22:47:11.794" level="INFO">Clicking button 'id=login'.</msg>
+<status status="PASS" endtime="20170619 22:47:11.992" starttime="20170619 22:47:11.793"></status>
+</kw>
+<status status="PASS" endtime="20170619 22:47:11.993" starttime="20170619 22:47:06.041"></status>
+</kw>
+<kw name="Click Need Element" library="common">
+<arguments>
+<arg>//*[@id="mainDropdown"]/ul[2]/li/a</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:47:42.822" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170619 22:47:42.823" starttime="20170619 22:47:42.478"></status>
+</kw>
+<msg timestamp="20170619 22:47:42.826" level="FAIL">Element '//*[@id="mainDropdown"]/ul[2]/li/a' did not appear in 30 seconds</msg>
+<status status="FAIL" endtime="20170619 22:47:42.827" starttime="20170619 22:47:11.995"></status>
+</kw>
+<status status="FAIL" endtime="20170619 22:47:42.828" starttime="20170619 22:47:11.995"></status>
+</kw>
+<status status="FAIL" endtime="20170619 22:47:42.829" starttime="20170619 22:46:24.474"></status>
+</kw>
+<test id="s1-t1" name="Create Normal Lesson With Not Conflict">
+<timeout value="5 minutes"></timeout>
+<status status="FAIL" endtime="20170619 22:47:42.833" critical="yes" starttime="20170619 22:47:42.829">Parent suite setup failed:
+Element '//*[@id="mainDropdown"]/ul[2]/li/a' did not appear in 30 seconds</status>
+</test>
+<kw type="teardown" name="SuiteTeardown">
+<kw name="Log Out" library="common">
+<kw name="Click Need Element" library="common">
+<arguments>
+<arg>id=hamberger</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:13.763" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170619 22:48:13.764" starttime="20170619 22:48:13.392"></status>
+</kw>
+<msg timestamp="20170619 22:48:13.767" level="FAIL">Element 'id=hamberger' did not appear in 30 seconds</msg>
+<status status="FAIL" endtime="20170619 22:48:13.768" starttime="20170619 22:47:42.846"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:48:23.820" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;&lt;meta charset="utf-8" /&gt;&lt;!-- CSS--&gt;&lt;link rel="stylesheet" href="stylesheets/bootstrap.css" /&gt;&lt;link rel="stylesheet" href="stylesheets/page_css/login.css" /&gt;&lt;!-- Javascript--&gt;&lt;script src="javascripts/jquery.js"&gt;&lt;/script&gt;&lt;script src="javascripts/bootstrap.min.js"&gt;&lt;/script&gt;&lt;script src="javascripts/page_js/login.js"&gt;&lt;/script&gt;&lt;script src="javascripts/layer/layer.js"&gt;&lt;/script&gt;&lt;link rel="stylesheet" href="http://localhost:3000/javascripts/layer/skin/default/layer.css?v=3.0.11110" id="layuicss-skinlayercss" /&gt;&lt;!-- 彈出視窗--&gt;&lt;title&gt;登入&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div id="main" align="center" class="well well-lg"&gt;&lt;label id="title"&gt;&lt;b id="index" title="Copyright © 2016 福智 All rights reserved"&gt;&lt;img src="images/open-book.png" /&gt; 福智基金會&lt;/b&gt;&lt;/label&gt;&lt;br /&gt;&lt;ul id="myTab" class="nav nav-tabs"&gt;&lt;li class="active"&gt;&lt;a href="#user"&gt;使用者登入&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div class="tab-content"&gt;&lt;!-- 使用者登入--&gt;&lt;div id="user" class="tab-pane active"&gt;&lt;br /&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="center"&gt;&lt;img src="images/user.png" class="img-circle" /&gt;&lt;/td&gt;&lt;input type="hidden" name="identity" value="user" /&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;帳號&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;input id="account" type="text" placeholder="請輸入帳號" name="account" class="form-control" /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;密碼&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;input id="pwd" type="password" placeholder="請輸入密碼" name="password" class="form-control" /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br /&gt;&lt;b&gt;驗證碼&lt;/b&gt;&lt;input id="code" type="text" class="form-control input-sm currentNum" /&gt;&lt;br /&gt;&lt;div id="verification" style="float:left;" class="check_img"&gt;&lt;img src="images/num/08.png" /&gt;&lt;img src="images/num/07.png" /&gt;&lt;img src="images/num/07.png" /&gt;&lt;img src="images/num/04.png" /&gt;&lt;/div&gt;&lt;img src="images/reload.png" style="margin-left:10px;cursor:pointer;" title="重新產生" class="reload" /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;a id="registered1" href="/register" style="cursor:pointer;font-size:12px;float:right;" class="registered"&gt;還沒有帳號&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;input id="login" type="button" value="登入" style="width:250px;" class="btn btn-primary chk btn-embossed" /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt; &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;input id="forgotPsd" type="button" value="忘記密碼" style="width:250px;" class="btn btn-info btn-embossed" /&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class="layui-layer-move"&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:24.171" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170619 22:48:24.172" starttime="20170619 22:48:23.821"></status>
+</kw>
+<msg timestamp="20170619 22:48:24.176" level="FAIL">Page should have contained element 'id=hamberger' but did not</msg>
+<status status="FAIL" endtime="20170619 22:48:24.176" starttime="20170619 22:48:13.769"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:48:24.178" level="INFO">Clicking element 'id=hamberger'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:32.126" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:32.127" starttime="20170619 22:48:31.866"></status>
+</kw>
+<msg timestamp="20170619 22:48:32.127" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:32.136" level="FAIL">ValueError: Element locator 'id=hamberger' did not match any elements.</msg>
+<status status="FAIL" endtime="20170619 22:48:32.136" starttime="20170619 22:48:24.177"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<msg timestamp="20170619 22:48:32.638" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20170619 22:48:32.638" starttime="20170619 22:48:32.137"></status>
+</kw>
+<status status="FAIL" endtime="20170619 22:48:32.639" starttime="20170619 22:47:42.845"></status>
+</kw>
+<kw name="Click Need Element" library="common">
+<arguments>
+<arg>id=logout</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:32.662" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:32.662" starttime="20170619 22:48:32.647"></status>
+</kw>
+<msg timestamp="20170619 22:48:32.662" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:32.706" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:32.707" starttime="20170619 22:48:32.641"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:32.727" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:32.727" starttime="20170619 22:48:32.713"></status>
+</kw>
+<msg timestamp="20170619 22:48:32.727" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:32.735" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:32.736" starttime="20170619 22:48:32.707"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20170619 22:48:32.737" level="INFO">Clicking element 'id=logout'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:32.757" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:32.758" starttime="20170619 22:48:32.743"></status>
+</kw>
+<msg timestamp="20170619 22:48:32.758" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:32.766" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:32.766" starttime="20170619 22:48:32.736"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<msg timestamp="20170619 22:48:33.267" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" endtime="20170619 22:48:33.267" starttime="20170619 22:48:32.767"></status>
+</kw>
+<status status="FAIL" endtime="20170619 22:48:33.268" starttime="20170619 22:48:32.640"></status>
+</kw>
+<kw name="Wait Need Element" library="common">
+<arguments>
+<arg>//*[@id="layui-layer1"]/div[1]/b[contains(.,"尚未登入")]</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:33.293" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:33.293" starttime="20170619 22:48:33.278"></status>
+</kw>
+<msg timestamp="20170619 22:48:33.293" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:33.304" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:33.305" starttime="20170619 22:48:33.270"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170619 22:48:33.331" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:33.331" starttime="20170619 22:48:33.312"></status>
+</kw>
+<msg timestamp="20170619 22:48:33.332" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:33.342" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<status status="FAIL" endtime="20170619 22:48:33.342" starttime="20170619 22:48:33.305"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<status status="FAIL" endtime="20170619 22:48:33.357" starttime="20170619 22:48:33.342"></status>
+</kw>
+<status status="FAIL" endtime="20170619 22:48:33.358" starttime="20170619 22:48:33.269"></status>
+</kw>
+<status status="FAIL" endtime="20170619 22:48:33.359" starttime="20170619 22:47:42.844"></status>
+</kw>
+<status status="FAIL" endtime="20170619 22:48:33.362" starttime="20170619 22:47:42.843">Several failures occurred:
+
+1) Element 'id=hamberger' did not appear in 30 seconds
+
+2) Page should have contained element 'id=hamberger' but did not
+
+3) ValueError: Element locator 'id=hamberger' did not match any elements.
+
+4) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+5) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+    [ Message content over the limit has been removed. ]
+...bf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+7) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+8) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+9) Execution terminated by signal</status>
+</kw>
+<doc>Add Normal Lesson</doc>
+<status status="FAIL" endtime="20170619 22:48:33.363" starttime="20170619 22:46:23.632">Suite setup failed:
+Element '//*[@id="mainDropdown"]/ul[2]/li/a' did not appear in 30 seconds
+
+Also suite teardown failed:
+Several failures occurred:
+
+1) Element 'id=hamberger' did not appear in 30 seconds
+
+2) Page should have contained element 'id=hamberger' but did not
+
+3) ValueError: Element locator 'id=hamberger' did not match any elements.
+
+4) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+5) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+    [ Message content over the limit has been removed. ]
+...bf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+7) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+8) NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+
+
+9) Execution terminated by signal</status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Add Normal Lesson" pass="0">Add Normal Lesson</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20170619 22:48:32.127" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:32.662" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:32.727" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:32.758" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:33.293" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+<msg timestamp="20170619 22:48:33.332" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=58.0.3029.110)
+  (Driver info: chromedriver=2.29.461591 (62ebf098771772160f391d75e589dc567915b233),platform=Windows NT 6.2.9200 x86_64)
+</msg>
+</errors>
+</robot>
